@@ -415,8 +415,8 @@ export const FacebookIcon = ({ className, ...rest }) => {
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"
-      width={100}
-      height={100}
+      width={24} // Change from 100 to 24
+      height={24} // Change from 100 to 24
       viewBox="0 0 48 48"
       className={cx("w-full h-auto", className)}
       {...rest}
