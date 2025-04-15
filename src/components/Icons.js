@@ -418,7 +418,7 @@ export const FacebookIcon = ({ className, ...rest }) => {
       width={24}
       height={24}
       viewBox="0 0 42 42" // Changed viewBox to match other icons
-      className={cx("w-full h-auto", className)}
+      className={cx("w-6 h-6", className)} // Use fixed size classes
       {...rest}
     >
       <g clipPath="url(#a)">
