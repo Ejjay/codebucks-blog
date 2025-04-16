@@ -2,7 +2,7 @@ import BlogDetails from "@/src/components/Blog/BlogDetails";
 import RenderMdx from "@/src/components/Blog/RenderMdx";
 import Tag from "@/src/components/Elements/Tag";
 import siteMetadata from "@/src/utils/siteMetaData";
-import { blogs } from '@/.velite/generated'
+import { blogs } from '@/.velite/generated';
 import { slug as slugify } from "github-slugger";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -64,18 +64,14 @@ function TableOfContentsItem({ item, level = "two" }) {
       <a
         href={item.url}
         data-level={level}
-        className="data-[level=two]:pl-0 data-[level=two]:pt-2
-                  data-[level=two]:border-t border-solid border-dark/40
-                  data-[level=three]:pl-4
-                  sm:data-[level=three]:pl-6
-                  flex items-center justify-start"
+        className="data-[level=two]:pl-0 data-[level=two]:pt-2 data-[level=two]:border-t border-solid border-dark/40 data-[level=three]:pl-4 sm:data-[level=three]:pl-6 flex items-center justify-start"
       >
         {level === "three" && (
           <span className="flex w-1 h-1 rounded-full bg-dark mr-2">&nbsp;</span>
         )}
         <span className="hover:underline">{item.title}</span>
       </a>
-      {item.items.length > 0 && (
+      {item.items && item.items.length > 0 && (
         <ul className="mt-1">
           {item.items.map((subItem) => (
             <TableOfContentsItem key={subItem.url} item={subItem} level="three" />
@@ -150,7 +146,7 @@ export default async function BlogPage({ params }) {
             sizes="100vw"
           />
         </div>
-        <BlogDetails blog={blog} slug={params.slug} />
+        <BlogDetails blog={blog} slug={slug} />
 
         <div className="grid grid-cols-12 gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10">
           <div className="col-span-12 lg:col-span-4">
@@ -162,7 +158,7 @@ export default async function BlogPage({ params }) {
                 Table Of Content
               </summary>
               <ul className="mt-4 font-in text-base">
-                {blog.toc.map((item) => (
+                {blog.toc?.map((item) => (
                   <TableOfContentsItem key={item.url} item={item} />
                 ))}
               </ul>
