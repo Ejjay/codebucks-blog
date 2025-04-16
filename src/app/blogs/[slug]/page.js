@@ -12,10 +12,14 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = params; // No "await" here!
+  const { slug } = params;
   const blog = blogs.find((blog) => blog.slug === slug);
+  
   if (!blog) {
-    return;
+    return {
+      title: 'Blog not found',
+      description: 'The blog post you are looking for does not exist'
+    };
   }
 
   const publishedAt = new Date(blog.publishedAt).toISOString();
@@ -82,8 +86,8 @@ function TableOfContentsItem({ item, level = "two" }) {
   );
 }
 
-export default async function BlogPage({ params }) {
-  const { slug } = params; // No "await" here!
+export default function BlogPage({ params }) {
+  const { slug } = params;
   const blog = blogs.find((blog) => blog.slug === slug);
 
   if (!blog) {

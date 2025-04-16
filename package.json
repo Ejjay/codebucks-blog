@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && rm -rf .next",
     "start": "next start",
     "lint": "next lint",
     "content": "velite --clean"
