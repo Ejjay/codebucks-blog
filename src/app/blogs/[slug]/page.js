@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = params; // Removed unnecessary await
+  const { slug } = params; // No "await" here!
   const blog = blogs.find((blog) => blog.slug === slug);
   if (!blog) {
     return;
@@ -28,9 +28,9 @@ export async function generateMetadata({ params }) {
         ? [siteMetadata.siteUrl + blog.image.src]
         : blog.image;
   }
-  const ogImages = imageList.map((img) => {
-    return { url: img.includes("http") ? img : siteMetadata.siteUrl + img };
-  });
+  const ogImages = imageList.map((img) => ({
+    url: img.includes("http") ? img : siteMetadata.siteUrl + img,
+  }));
 
   const authors = blog?.author ? [blog.author] : siteMetadata.author;
 
@@ -83,7 +83,7 @@ function TableOfContentsItem({ item, level = "two" }) {
 }
 
 export default async function BlogPage({ params }) {
-  const { slug } = params; // Removed unnecessary await
+  const { slug } = params; // No "await" here!
   const blog = blogs.find((blog) => blog.slug === slug);
 
   if (!blog) {
