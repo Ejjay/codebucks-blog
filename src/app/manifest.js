@@ -1,7 +1,7 @@
 export default function manifest() {
     return {
-      name: 'PCMI - Infanta',
-      short_name: 'Pag-ibig Christian Ministries — Infanta',
+      name: 'Pag-ibig Christian Ministries — Infanta',
+      short_name: 'PCMI - Infanta',
       description: 'Official Website of PCMI -Infanta',
       start_url: '/',
       display: 'standalone',
