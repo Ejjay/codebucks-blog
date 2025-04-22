@@ -1,6 +1,6 @@
-const YouTubeVideo = ({ videoId, title = "YouTube Video" }) => {
+const YouTubeVideo = ({ videoId, title = "YouTube Video", isBanner = false }) => {
   return (
-    <div className="relative w-full pb-[56.25%] h-0 overflow-hidden max-w-full">
+    <div className={`relative w-full ${isBanner ? 'h-[60vh]' : 'pb-[56.25%] h-0'} overflow-hidden max-w-full`}>
       <iframe
         src={`https://www.youtube.com/embed/${videoId}`}
         title={title}
