@@ -23,7 +23,7 @@ body {
 h1>a>.icon.icon-link:before,
 h2>a>.icon.icon-link:before,
 h3>a>.icon.icon-link:before{
-content: "#";
+content: "#"; 
 font-size: 0.8rem;
 }
 
