@@ -1,8 +1,10 @@
 import * as runtime from 'react/jsx-runtime'
 import Image from 'next/image'
+import YouTubeVideo from "../Elements/YouTubeVideo" 
 
 const sharedComponents = {
-  Image
+  Image,
+  YouTubeVideo
 }
 
 const useMDXComponent = (code) => {
@@ -10,7 +12,7 @@ const useMDXComponent = (code) => {
   return fn({ ...runtime }).default
 }
 
- const MDXContent = ({ code, components, ...props }) => {
+const MDXContent = ({ code, components, ...props }) => {
   const Component = useMDXComponent(code)
   return <Component components={{ ...sharedComponents, ...components }} {...props} />
 }
