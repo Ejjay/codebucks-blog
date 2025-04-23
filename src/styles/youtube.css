@@ -1,0 +1,22 @@
+.ytp-chrome-top,
+.ytp-chrome-top-buttons,
+.ytp-watch-later-button,
+.ytp-share-button,
+.ytp-watermark,
+.ytp-youtube-button,
+.ytp-menuitem,
+.watch-on-youtube-button-wrapper,
+.ytp-button {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+}
+
+.ytp-embed:not(.ad-showing) .ytp-chrome-top {
+  display: none !important;
+}
