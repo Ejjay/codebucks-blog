@@ -95,7 +95,11 @@ export default async function BlogPage({ params }) {
   const { slug } = await params;
   const blog = blogs.find((blog) => blog.slug === slug);
 
+  console.log("Params slug:", slug);
+  console.log("Found blog:", blog);
+
   if (!blog) {
+    console.log("Blog not found!");
     notFound();
   }
 

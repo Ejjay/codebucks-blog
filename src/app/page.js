@@ -5,6 +5,8 @@ import VideoPosts from "@/src/components/Home/VideoPosts";
 import RecentPosts from "@/src/components/Home/RecentPosts";
 
 export default function Home() {
+  console.log("All blogs:", blogs);
+
   return (
     <main className="flex flex-col items-center justify-center">
       <HomeCoverSection blogs={blogs} />
