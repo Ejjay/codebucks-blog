@@ -20,3 +20,22 @@
 .ytp-embed:not(.ad-showing) .ytp-chrome-top {
   display: none !important;
 }
+
+.ytp-watermark {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+
+.ytp-chrome-top .ytp-watermark {
+    display: none !important;
+}
+
+iframe[src*="youtube.com"] .ytp-watermark {
+    display: none !important;
+}
