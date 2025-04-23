@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { configureYouTubeEmbed } from '../utils/youtubeHelper';
+import { configureYouTubeEmbed } from '../../utils/youtubeHelper';
 import '../../styles/youtube.css';
 
 const YouTubeVideo = ({ videoId, title = "YouTube Video", isBanner }) => {
