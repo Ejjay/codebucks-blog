@@ -1,8 +1,6 @@
-import React from 'react';
-
 const VideoPlayer = ({ videoUrl, title, isBanner }) => {
   return (
-    <div className={`w-full ${isBanner ? 'aspect-video' : 'aspect-square md:aspect-video'}`}>
+    <div className="w-full h-full">
       <iframe
         src={videoUrl}
         title={title}
