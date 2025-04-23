@@ -1,10 +1,12 @@
 import * as runtime from 'react/jsx-runtime'
 import Image from 'next/image'
 import YouTubeVideo from "../Elements/YouTubeVideo" 
+import VideoPlayer from "../Elements/VideoPlayer";
 
 const sharedComponents = {
   Image,
-  YouTubeVideo
+  YouTubeVideo,
+  VideoPlayer
 }
 
 const useMDXComponent = (code) => {
