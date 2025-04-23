@@ -190,7 +190,7 @@ export default async function BlogPage({ params }) {
           </div>
           <RenderMdx blog={blog} />
         </div>
-      </article>
+      </article> 
     </>
   );
 }
